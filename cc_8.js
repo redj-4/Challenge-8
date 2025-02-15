@@ -52,3 +52,34 @@ const calculateServiceFee = (amount, serviceType) => {
   // Test cases
   console.log(calculateServiceFee(200, "Premium"));  // Expected output: "Service Fee: $30.00"
   console.log(calculateServiceFee(500, "Standard")); // Expected output: "Service Fee: $50.00"
+
+  //Task 4: Parameters and Arguments 
+
+// Function to calculate the total rental cost for a car rental.
+function calculateRentalCost(days, carType, insurance = false) {
+    let dailyRate = 0; // Initialize daily rate based on car type
+  
+    // Determine the daily rate based on the provided car type.
+    if (carType === "Economy") {
+      dailyRate = 40;
+    } else if (carType === "Standard") {
+      dailyRate = 60;
+    } else if (carType === "Luxury") {
+      dailyRate = 100;
+    }
+  
+    // Calculate the base cost for the rental period.
+    let totalCost = dailyRate * days;
+  
+    // If insurance is opted, add $20 per day.
+    if (insurance) {
+      totalCost += 20 * days;
+    }
+  
+    // Return the formatted total rental cost.
+    return `Total Rental Cost: $${totalCost}`;
+  }
+  
+  // Test cases
+  console.log(calculateRentalCost(3, "Economy", true));  // Expected output: "Total Rental Cost: $180"
+  console.log(calculateRentalCost(5, "Luxury", false));  // Expected output: "Total Rental Cost: $500"
