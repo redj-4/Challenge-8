@@ -27,3 +27,28 @@ const calculateDiscount = function(price, discountRate) {
   // Test cases
   console.log(calculateDiscount(100, 0.2));  // Expected output: "Final Price: $80.00"
   console.log(calculateDiscount(250, 0.15)); // Expected output: "Final Price: $212.50"
+
+  //Task 3: Arrow Functions
+// Arrow function to calculate the service fee based on the amount and service type.
+const calculateServiceFee = (amount, serviceType) => {
+    let feeRate = 0; // Initialize the fee rate
+  
+    // Set fee rate based on the provided service type
+    if (serviceType === "Premium") {
+      feeRate = 0.15;
+    } else if (serviceType === "Standard") {
+      feeRate = 0.10;
+    } else if (serviceType === "Basic") {
+      feeRate = 0.05;
+    }
+  
+    // Calculate the fee by multiplying the amount by the fee rate.
+    const fee = amount * feeRate;
+    
+    // Return the service fee formatted to two decimal places.
+    return `Service Fee: $${fee.toFixed(2)}`;
+  };
+  
+  // Test cases
+  console.log(calculateServiceFee(200, "Premium"));  // Expected output: "Service Fee: $30.00"
+  console.log(calculateServiceFee(500, "Standard")); // Expected output: "Service Fee: $50.00"
