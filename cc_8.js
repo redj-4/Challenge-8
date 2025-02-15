@@ -115,3 +115,20 @@ function filterLargeTransactions(transactions, filterFunction) {
 // Test case: filtering transactions above $1000.
 console.log(filterLargeTransactions(transactions, amount => amount > 1000));
 // Expected output: [1500, 3200, 2500]
+
+//Task 7: Closures
+// Function that creates a cart tracker using closures.
+function createCartTracker() {
+  let total = 0; // Initialize the running total, kept private within the closure.
+
+  // Return a function that adds an item's price to the total and returns the updated total.
+  return function(itemPrice) {
+    total += itemPrice;
+    return `Total Cart Value: $${total}`;
+  };
+}
+
+// Test cases
+let cart = createCartTracker();
+console.log(cart(20)); // Expected output: "Total Cart Value: $20"
+console.log(cart(35)); // Expected output: "Total Cart Value: $55"
