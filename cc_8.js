@@ -101,3 +101,17 @@ function calculateLoanPayment(principal, rate, time) {
   // Test cases
   console.log(calculateLoanPayment(1000, 0.05, 2));  // Expected output: "Total Payment: $1100.00"
   console.log(calculateLoanPayment(5000, 0.07, 3));  // Expected output: "Total Payment: $6050.00"
+
+//Task 6: High-Order Functions 
+// Declare an array with at least five transaction amounts.
+const transactions = [200, 1500, 3200, 800, 2500];
+
+// Higher-order function to filter transactions based on a provided filter function.
+function filterLargeTransactions(transactions, filterFunction) {
+  // Use the built-in filter method to return transactions that meet the filter condition.
+  return transactions.filter(filterFunction);
+}
+
+// Test case: filtering transactions above $1000.
+console.log(filterLargeTransactions(transactions, amount => amount > 1000));
+// Expected output: [1500, 3200, 2500]
