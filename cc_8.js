@@ -132,3 +132,20 @@ function createCartTracker() {
 let cart = createCartTracker();
 console.log(cart(20)); // Expected output: "Total Cart Value: $20"
 console.log(cart(35)); // Expected output: "Total Cart Value: $55"
+
+//Task 8: Recursion in JS
+// Recursive function to project savings growth until reaching year 10.
+// The function takes the current year and the current savings amount.
+function calculateSavings(years, amount) {
+  // Base case: When the current year is 10, return the projected savings.
+  if (years === 10) {
+    return `Projected Savings: $${amount.toFixed(2)}`;
+  }
+  
+  // Recursive case: Increase the amount by 5% and move to the next year.
+  return calculateSavings(years + 1, amount * 1.05);
+}
+
+// Test cases
+console.log(calculateSavings(8, 1000)); // Expected output: "Projected Savings: $1102.50"
+console.log(calculateSavings(5, 5000)); // Expected output: "Projected Savings: $6381.41"
